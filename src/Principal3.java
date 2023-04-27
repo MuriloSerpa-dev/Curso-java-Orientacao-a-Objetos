@@ -6,7 +6,7 @@ public class Principal3 {
         seuCarro.cor = "Preto";
 
        
-        seuCarro.dono.nome = "Esteferson";
+         seuCarro.dono.nome = "Esteferson";
 
         System.out.println(seuCarro.dono.nome);
 
