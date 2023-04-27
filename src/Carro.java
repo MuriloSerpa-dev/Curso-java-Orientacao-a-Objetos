@@ -5,6 +5,6 @@ public class Carro {
     int anoDeFabricacao;
     boolean biCombustivel;
 
-    Proprietario dono = new Proprietario();
+    Proprietario dono;
 
 }
