@@ -11,10 +11,10 @@ public class Principal4 {
         seuCarro.modelo = " Civic";
         seuCarro.dono = dono1;
 
-        seuCarro.dono.nome = "Murilo";
-
-        System.out.println(seuCarro.dono.nome);
+        
         System.out.println(meuCarro.dono.nome);
+        System.out.println(seuCarro.dono.nome);
+        
     
 
     }
