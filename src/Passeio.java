@@ -1,6 +1,6 @@
 public class Passeio {
     public static void main(String[] args) {
-        Pessoa pessoa = new Pessoa();
+        Pessoa pessoa = new Pessoa(" ");
         pessoa.nome = "Andre";
 
         pessoa.cachorro = new Cachorro();
