@@ -1,3 +1,5 @@
+package com.algaworksfjo.financeiro;
+
 public class Fornecedor {
     private String nome;
 
