@@ -23,6 +23,15 @@ public class ContaPagar extends Conta {
             this.situacaoConta = SituacaoConta.PAGA;
         }
     }
+
+        public void exibirDetalhes(){
+            System.out.println("Conta a PAGAR ----");
+            System.out.println("Cliente nome: " + this.fornecedor.getNome());
+            System.out.println("Descricão" + this.getDescricao());
+            System.out.println("Valor R$ " + this.getValor());
+            System.out.println("Vencimento: " + this.getDataVencimento());
+        }
+
     public Fornecedor getFornecedor() {
         return fornecedor;
     }

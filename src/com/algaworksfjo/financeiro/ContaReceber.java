@@ -14,7 +14,7 @@ public class ContaReceber extends Conta{
     }
     public void receber(){
         if(SituacaoConta.PAGA.equals(getSituacaoConta())){
-            System.out.println("Você não pode recebert uma conta paga");
+            System.out.println("Você não pode receber uma conta paga");
         } else if (SituacaoConta.CANCELADA.equals(getSituacaoConta())) {
             System.out.println("Você não pode reeceber uma conta cancelada");
         } else{
@@ -29,6 +29,13 @@ public class ContaReceber extends Conta{
             super.cancelar();
 
         }
+    }
+    public void exibirDetalhes(){
+        System.out.println("Conta a RECEBER-----");
+        System.out.println("Cliente nome: " + this.cliente.getNome());
+        System.out.println("Descricão" + this.getDescricao());
+        System.out.println("Valor R$ " + this.getValor());
+        System.out.println("Vencimento: " + this.getDataVencimento());
     }
     public Cliente getCliente() {
         return cliente;

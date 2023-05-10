@@ -1,6 +1,6 @@
 package com.algaworksfjo.financeiro;
 
-public class Pessoa {
+public abstract class Pessoa {
     private String nome;
 
     public String getNome() {
