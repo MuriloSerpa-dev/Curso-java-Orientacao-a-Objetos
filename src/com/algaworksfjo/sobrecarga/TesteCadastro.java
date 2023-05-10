@@ -7,6 +7,7 @@ public class TesteCadastro {
 
     cadastro.cadastrar(pessoa);
     cadastro.cadastrar("Fernando", 35);
+    cadastro.cadastrar("Maicon");
 
 
 
