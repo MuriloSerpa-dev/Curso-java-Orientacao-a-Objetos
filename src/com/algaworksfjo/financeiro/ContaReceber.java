@@ -3,7 +3,6 @@ package com.algaworksfjo.financeiro;
 public class ContaReceber extends Conta{
     Cliente cliente;
 
-
     ContaReceber(){
     }
     ContaReceber(Cliente cliente, String descricao, Double valor, String dataVencimento){
@@ -12,22 +11,21 @@ public class ContaReceber extends Conta{
         this.setValor(valor);
         this.setDataVencimento(dataVencimento);
     }
-    public void receber(){
+    public void receber() throws OperacaoContaException{
         if(SituacaoConta.PAGA.equals(getSituacaoConta())){
-            System.out.println("Você não pode receber uma conta paga");
+            throw new OperacaoContaException("Você não pode receber uma conta paga");
         } else if (SituacaoConta.CANCELADA.equals(getSituacaoConta())) {
-            System.out.println("Você não pode reeceber uma conta cancelada");
+            throw new OperacaoContaException("Você não pode reeceber uma conta cancelada");
         } else{
         System.out.println("Recebimento da conta" + getDescricao() +" Cliente " + cliente.getNome() + " valor " +
                 getValor() + " sua data de vencimento é " + getDataVencimento() );
         }
     }
-    public void cancelar(){
+    public void cancelar() throws OperacaoContaException {
         if(getValor()>50000d){
-            System.out.println("A conta " + getDescricao() + " não pode ser cancelada acima do valor permitido!! ");
+            throw new OperacaoContaException("A conta " + getDescricao() + " não pode ser cancelada acima do valor permitido!! ");
         }else{
-            super.cancelar();
-
+        super.cancelar();
         }
     }
     public void exibirDetalhes(){

@@ -12,11 +12,12 @@ public class ContaPagar extends Conta {
         this.setValor(valor);
         this.setDataVencimento(dataVencimento);
     }
-    public void pagar() {
+    public void pagar() throws OperacaoContaException{
         if (SituacaoConta.PAGA.equals(this.getSituacaoConta())) {
-            System.out.println("Voce não pode pagar uma conta paga "+ this.getDescricao());
-        } else if (SituacaoConta.CANCELADA.equals(this.getSituacaoConta())){
-            System.out.println("Voce nao pode pagar uma conta cancelada " + this.getDescricao());
+           throw new OperacaoContaException("Voce não pode pagar uma conta paga " + this.getDescricao());
+        }
+        else if (SituacaoConta.CANCELADA.equals(this.getSituacaoConta())){
+            throw new OperacaoContaException("Voce nao pode pagar uma conta cancelada " + this.getDescricao());
         } else{
             System.out.println("Conta paga com sucesso" + this.getDescricao());
 

@@ -1,10 +1,11 @@
 package com.algaworksfjo.financeiro;
 
 
+import com.algaworksfjo.excessoes.SaldoInsuficienteException;
 
 public class Principal {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws OperacaoContaException {
         // instanciando fornecedores
         Fornecedor imobiliaria = new Fornecedor();
         imobiliaria.setNome("Casa & Cia Negócios Imobiliários");
@@ -42,7 +43,18 @@ public class Principal {
         RelatorioContas relatorio = new RelatorioContas();
         Conta[] contas = new Conta[]{contaPagar1, contaPagar2, contaReceber1, contaReceber2};
 
-        relatorio.exibirListagem(contas);
+
+        try {
+            contaPagar1.pagar();
+            contaPagar2.pagar();
+            contaReceber1.receber();
+            contaReceber2.cancelar();
+
+        } catch (OperacaoContaException e){
+            System.out.println(" ERRO " + e.getMessage());
+        }finally {
+            relatorio.exibirListagem(contas);
+        }
     }
 
     }

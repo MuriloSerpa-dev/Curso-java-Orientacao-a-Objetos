@@ -12,11 +12,11 @@ public abstract class Conta {
     }
 
 
-    public void cancelar( ){
+    public void cancelar ( ) throws OperacaoContaException{
         if(SituacaoConta.CANCELADA.equals(this.getSituacaoConta())){
-            System.out.println("Não pode cancelar uma conta ja cancelada");
+            throw new OperacaoContaException("Não pode cancelar uma conta ja cancelada");
         } else if (SituacaoConta.PAGA.equals(this.getSituacaoConta())){
-            System.out.println("Não pode cancelar uma conta paga");
+            throw new OperacaoContaException("Não pode cancelar uma conta paga");
         }else{
             System.out.println("Conta cancelada com sucesso " + this.getDescricao() );
             this.situacaoConta = SituacaoConta.CANCELADA;
