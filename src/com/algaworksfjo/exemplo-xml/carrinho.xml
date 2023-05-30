@@ -1,0 +1,10 @@
+<carrinho>
+  <produto codigo="1">
+    <descricao>sabonete</descricao>
+    <valor>2.50</valor>
+  </produto>
+  <produto codigo="2">
+    <descricao>arroz</descricao>
+    <valor>5.80</valor>
+  </produto>
+</carrinho>
