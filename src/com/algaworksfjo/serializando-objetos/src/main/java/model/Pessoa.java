@@ -8,6 +8,7 @@ public class Pessoa implements Serializable {
     // implementado por serializable, todos os atributos tambem tem que implementar serializable
 
     private String nome;
+
     private int idade;
     private String profissao;
 
