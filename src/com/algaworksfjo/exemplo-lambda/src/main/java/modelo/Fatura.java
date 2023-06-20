@@ -36,4 +36,8 @@ public class Fatura {
     public String resumo(){
         return "Valor devido: " + this.valor + "\n";
     }
+
+    public void atualizarStatus(){
+        System.out.println("Atualizando status da fatura de valor R$ " + this.valor);
+    }
 }
